@@ -14,7 +14,7 @@ export default class MarsCar {
     this.toward = toward
   }
 
-  forward(unit) {
+  goForward(unit) {
     switch(this.toward) {
       case Toward.N:
         this.landingPadY += unit
