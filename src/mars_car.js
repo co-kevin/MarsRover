@@ -14,19 +14,32 @@ export default class MarsCar {
     this.toward = toward
   }
 
-  goForward(unit) {
+  /**
+   * 重置火星车坐标与朝向
+   * 
+   * @param {*Number} x 
+   * @param {*Number} y 
+   * @param {*Toward} toward 
+   */
+  reset(x, y, toward) {
+    this.x = x
+    this.y = y
+    this.toward = toward
+  }
+ 
+  goForward(distance) {
     switch(this.toward) {
       case Toward.N:
-        this.y += unit
+        this.y += distance
         break
       case Toward.S:
-        this.y -= unit
+        this.y -= distance
         break
       case Toward.E:
-        this.x += unit
+        this.x += distance
         break
       case Toward.W:
-        this.x -= unit
+        this.x -= distance
         break
     }
   }

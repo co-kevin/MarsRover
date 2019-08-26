@@ -10,6 +10,7 @@ describe('MarsCar', function () {
     assert.ok(car instanceof MarsCar)
   })
   it('should move car go forward 100 and return correct coordinates 100,200', function () {
+    car.reset(100, 100, Toward.N)
     car.goForward(100)
     assert.ok(car.x === 100)
     assert.ok(car.y === 200)
