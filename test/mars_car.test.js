@@ -11,7 +11,7 @@ describe('MarsCar', function () {
   })
   it('should move car go forward 100 and return correct coordinates 100,200', function () {
     car.goForward(100)
-    assert.ok(car.landingPadX === 100)
-    assert.ok(car.landingPadY === 200)
+    assert.ok(car.x === 100)
+    assert.ok(car.y === 200)
   })
 })

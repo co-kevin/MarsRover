@@ -9,24 +9,24 @@ export default class MarsCar {
    */
   constructor(workArea, landingPadX, landingPadY, toward) {
     this.workArea = workArea
-    this.landingPadX = landingPadX
-    this.landingPadY = landingPadY
+    this.x = landingPadX
+    this.y = landingPadY
     this.toward = toward
   }
 
   goForward(unit) {
     switch(this.toward) {
       case Toward.N:
-        this.landingPadY += unit
+        this.y += unit
         break
       case Toward.S:
-        this.landingPadY -= unit
+        this.y -= unit
         break
       case Toward.E:
-        this.landingPadX += unit
+        this.x += unit
         break
       case Toward.W:
-        this.landingPadX -= unit
+        this.x -= unit
         break
     }
   }
