@@ -60,4 +60,38 @@ export default class MarsCar {
         break
     }
   }
+
+  turnLeft90Degrees () {
+    switch(this.toward) {
+      case Toward.N:
+        this.toward = Toward.W
+        break
+      case Toward.S:
+          this.toward = Toward.E
+        break
+      case Toward.E:
+          this.toward = Toward.N
+        break
+      case Toward.W:
+          this.toward = Toward.S
+        break
+    }
+  }
+
+  turnRight90Degrees () {
+    switch(this.toward) {
+      case Toward.N:
+        this.toward = Toward.E
+        break
+      case Toward.S:
+          this.toward = Toward.W
+        break
+      case Toward.E:
+          this.toward = Toward.S
+        break
+      case Toward.W:
+          this.toward = Toward.N
+        break
+    }
+  }
 }
