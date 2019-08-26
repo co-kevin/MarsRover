@@ -1,3 +1,5 @@
+import Toward from './toward'
+
 export default class MarsCar {
   /**
    * @param {*WorkArea} workArea 探索区域
@@ -10,5 +12,22 @@ export default class MarsCar {
     this.landingPadX = landingPadX
     this.landingPadY = landingPadY
     this.toward = toward
+  }
+
+  forward(unit) {
+    switch(this.toward) {
+      case Toward.N:
+        this.landingPadY += unit
+        break
+      case Toward.S:
+        this.landingPadY -= unit
+        break
+      case Toward.E:
+        this.landingPadX += unit
+        break
+      case Toward.W:
+        this.landingPadX -= unit
+        break
+    }
   }
 }
