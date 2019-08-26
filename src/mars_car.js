@@ -43,4 +43,21 @@ export default class MarsCar {
         break
     }
   }
+
+  backUp(distance) {
+    switch(this.toward) {
+      case Toward.N:
+        this.y -= distance
+        break
+      case Toward.S:
+        this.y += distance
+        break
+      case Toward.E:
+        this.x -= distance
+        break
+      case Toward.W:
+        this.x += distance
+        break
+    }
+  }
 }

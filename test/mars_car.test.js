@@ -15,4 +15,10 @@ describe('MarsCar', function () {
     assert.ok(car.x === 100)
     assert.ok(car.y === 200)
   })
+  it('should move car back up 100 and return correct coordinates 100,0', function () {
+    car.reset(100, 100, Toward.N)
+    car.backUp(100)
+    assert.ok(car.x === 100)
+    assert.ok(car.y === 0)
+  })
 })
