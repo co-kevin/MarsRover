@@ -1,6 +1,7 @@
-import Toward from './toward'
-
 export default class MarsRover {
+  /**
+   * @param {*String} initial {x y direction}
+   */
   constructor(initial) {
     const status = initial.split(' ')
     this.x = Number(status[0])
@@ -8,84 +9,77 @@ export default class MarsRover {
     this.direction = status[2]
   }
 
-  /**
-   * 重置火星车坐标与朝向
-   * 
-   * @param {*Number} x 
-   * @param {*Number} y 
-   * @param {*Toward} toward 
-   */
-  reset (x, y, toward) {
-    this.x = x
-    this.y = y
-    this.toward = toward
+  status () {
+    return `${this.x} ${this.y} ${this.direction}`
   }
 
-  goForward (distance) {
-    switch (this.toward) {
-      case Toward.N:
-        this.y += distance
-        break
-      case Toward.S:
-        this.y -= distance
-        break
-      case Toward.E:
-        this.x += distance
-        break
-      case Toward.W:
-        this.x -= distance
-        break
+  run (cmd) {
+    if ('F' === cmd.toUpperCase()) {
+      switch (this.direction) {
+        case 'N':
+          this.y++
+          break
+        case 'S':
+          this.y--
+          break
+        case 'E':
+          this.x++
+          break
+        case 'W':
+          this.x--
+          break
+      }
     }
-  }
 
-  backUp (distance) {
-    switch (this.toward) {
-      case Toward.N:
-        this.y -= distance
-        break
-      case Toward.S:
-        this.y += distance
-        break
-      case Toward.E:
-        this.x -= distance
-        break
-      case Toward.W:
-        this.x += distance
-        break
+    if ('B' === cmd.toUpperCase()) {
+      switch (this.direction) {
+        case 'N':
+          this.y--
+          break
+        case 'S':
+          this.y++
+          break
+        case 'E':
+          this.x--
+          break
+        case 'W':
+          this.x++
+          break
+      }
     }
-  }
 
-  turnLeft90Degrees () {
-    switch (this.toward) {
-      case Toward.N:
-        this.toward = Toward.W
-        break
-      case Toward.S:
-        this.toward = Toward.E
-        break
-      case Toward.E:
-        this.toward = Toward.N
-        break
-      case Toward.W:
-        this.toward = Toward.S
-        break
+    if ('R' === cmd.toUpperCase()) {
+      switch (this.direction) {
+        case 'N':
+          this.direction = 'E'
+          break
+        case 'S':
+          this.direction = 'W'
+          break
+        case 'E':
+          this.direction = 'S'
+          break
+        case 'W':
+          this.direction = 'N'
+          break
+      }
     }
-  }
 
-  turnRight90Degrees () {
-    switch (this.toward) {
-      case Toward.N:
-        this.toward = Toward.E
-        break
-      case Toward.S:
-        this.toward = Toward.W
-        break
-      case Toward.E:
-        this.toward = Toward.S
-        break
-      case Toward.W:
-        this.toward = Toward.N
-        break
+    if ('L' === cmd.toUpperCase()) {
+      switch (this.direction) {
+        case 'N':
+          this.direction = 'W'
+          break
+        case 'S':
+          this.direction = 'E'
+          break
+        case 'E':
+          this.direction = 'N'
+          break
+        case 'W':
+          this.direction = 'S'
+          break
+      }
     }
   }
 }
