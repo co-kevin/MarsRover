@@ -20,6 +20,10 @@ export default class MarsRover {
     return this.status()
   }
 
+  setWorkspace (workspace) {
+    this.workspace = workspace
+  }
+
   run (cmd) {
     if ('F' === cmd.toUpperCase()) {
       switch (this.direction) {

@@ -1,4 +1,4 @@
-export default class WorkArea {
+export default class Workspace {
   constructor(text) {
     const coordinates = text.split(' ')
     this.x = Number(coordinates[0])
