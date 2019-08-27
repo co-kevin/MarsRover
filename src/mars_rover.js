@@ -1,6 +1,6 @@
 import Toward from './toward'
 
-export default class MarsCar {
+export default class MarsRover {
   /**
    * @param {*WorkArea} workArea 探索区域
    * @param {*} landingPadX 初始降落点 X
