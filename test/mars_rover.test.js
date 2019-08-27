@@ -1,13 +1,14 @@
 import assert from 'assert'
 
 import MarsRover from '../src/mars_rover'
-import WorkArea from '../src/work_area'
 import Toward from '../src/toward'
 
-const rover = new MarsRover(new WorkArea('100 200'), 100, 100, Toward.N)
+const rover = new MarsRover('10 15 N')
 describe('MarsRover', function () {
-  it('should return MarsRover Object', function () {
-    assert.ok(rover instanceof MarsRover)
+  it('should create mars rover', function () {
+    assert.ok(rover.x === 10)
+    assert.ok(rover.y === 15)
+    assert.ok(rover.direction === 'N')
   })
   it('should move rover go forward 100 and return correct coordinates 100,200', function () {
     rover.reset(100, 100, Toward.N)

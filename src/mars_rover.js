@@ -1,17 +1,11 @@
 import Toward from './toward'
 
 export default class MarsRover {
-  /**
-   * @param {*WorkArea} workArea 探索区域
-   * @param {*} landingPadX 初始降落点 X
-   * @param {*} landingPadY 初始降落点 Y
-   * @param {*} Toward 朝向 N, S, E, W
-   */
-  constructor(workArea, landingPadX, landingPadY, toward) {
-    this.workArea = workArea
-    this.x = landingPadX
-    this.y = landingPadY
-    this.toward = toward
+  constructor(initial) {
+    const status = initial.split(' ')
+    this.x = Number(status[0])
+    this.y = Number(status[1])
+    this.direction = status[2]
   }
 
   /**
