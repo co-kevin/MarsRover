@@ -2,8 +2,9 @@ import WorkArea from '../src/work_area'
 import assert from 'assert'
 
 describe('WorkArea', function () {
-  it('should_return_WorkArea_Object', function () {
-    const workArea = new WorkArea(1000, 1000)
-    assert.ok(workArea instanceof WorkArea)
+  it('should initial WorkArea', function () {
+    const workArea = new WorkArea('100 200')
+    assert.ok(workArea.x === 100)
+    assert.ok(workArea.y === 200)
   })
 })

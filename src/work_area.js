@@ -1,6 +1,7 @@
 export default class WorkArea {
-  constructor(x, y) {
-    this.x = x
-    this.y = y
+  constructor(text) {
+    const coordinates = text.split(' ')
+    this.x = Number(coordinates[0])
+    this.y = Number(coordinates[1])
   }
 }
