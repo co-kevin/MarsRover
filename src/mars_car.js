@@ -21,14 +21,14 @@ export default class MarsCar {
    * @param {*Number} y 
    * @param {*Toward} toward 
    */
-  reset(x, y, toward) {
+  reset (x, y, toward) {
     this.x = x
     this.y = y
     this.toward = toward
   }
- 
-  goForward(distance) {
-    switch(this.toward) {
+
+  goForward (distance) {
+    switch (this.toward) {
       case Toward.N:
         this.y += distance
         break
@@ -44,8 +44,8 @@ export default class MarsCar {
     }
   }
 
-  backUp(distance) {
-    switch(this.toward) {
+  backUp (distance) {
+    switch (this.toward) {
       case Toward.N:
         this.y -= distance
         break
@@ -62,35 +62,35 @@ export default class MarsCar {
   }
 
   turnLeft90Degrees () {
-    switch(this.toward) {
+    switch (this.toward) {
       case Toward.N:
         this.toward = Toward.W
         break
       case Toward.S:
-          this.toward = Toward.E
+        this.toward = Toward.E
         break
       case Toward.E:
-          this.toward = Toward.N
+        this.toward = Toward.N
         break
       case Toward.W:
-          this.toward = Toward.S
+        this.toward = Toward.S
         break
     }
   }
 
   turnRight90Degrees () {
-    switch(this.toward) {
+    switch (this.toward) {
       case Toward.N:
         this.toward = Toward.E
         break
       case Toward.S:
-          this.toward = Toward.W
+        this.toward = Toward.W
         break
       case Toward.E:
-          this.toward = Toward.S
+        this.toward = Toward.S
         break
       case Toward.W:
-          this.toward = Toward.N
+        this.toward = Toward.N
         break
     }
   }
