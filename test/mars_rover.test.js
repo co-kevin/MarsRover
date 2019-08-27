@@ -17,4 +17,8 @@ describe('MarsRover', function () {
     rover.run('B')
     assert.ok(rover.status(), '1 2 N')
   })
+  it('should batch run cmd', function () {
+    const status = rover.batch(['F', 'F', 'R', 'L', 'B', 'B', 'F'])
+    assert.ok(status, '1 3 N')
+  })
 })

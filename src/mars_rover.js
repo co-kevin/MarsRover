@@ -13,6 +13,13 @@ export default class MarsRover {
     return `${this.x} ${this.y} ${this.direction}`
   }
 
+  batch (cmds) {
+    cmds.forEach(cmd => {
+      this.run(cmd)
+    })
+    return this.status()
+  }
+
   run (cmd) {
     if ('F' === cmd.toUpperCase()) {
       switch (this.direction) {
